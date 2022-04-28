@@ -1,4 +1,6 @@
+.DS_store
 # Byte-compiled / optimized / DLL files
+.DS_store
 __pycache__/
 *.py[cod]
 *$py.class
