@@ -1,5 +1,9 @@
 # Motus_project
-A ride share application 
+## A ride share application 
 - Add `.DS_store` to the `.gitignore` file
-_ add a short description to the README file
+- add a short description to the README file
 - add commit and push
+- create a new venv
+- activate the venv 
+- pip install flask
+- run app
