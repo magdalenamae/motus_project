@@ -1,2 +1,2 @@
-# motus_project
+# Motus_project
 A ride share application 
