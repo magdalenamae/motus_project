@@ -7,3 +7,5 @@
 - activate the venv 
 - pip install flask
 - run app
+
+app url https://mysterious-plains-73351.herokuapp.com/ 
