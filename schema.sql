@@ -12,11 +12,13 @@ CREATE TABLE motus_users (
 );
 
 CREATE TABLE rides (
- ride_id serial PRIMARY KEY,
- owner_id INT REFERENCES motus_users (user_id),
+ ride_id SERIAL PRIMARY KEY,
+	user_id INTEGER,
  ride_description TEXT,
  ride_start TEXT,
-	ride_end TEXT
+	ride_end TEXT,
+	FOREIGN KEY(user_id) 
+		REFERENCES motus_users(user_id)
 );
 
 

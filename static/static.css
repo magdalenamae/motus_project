@@ -8,12 +8,49 @@ html{
  position: relative;
 }
 
+body {
+ --heading-color: #BEE3DB;
+ color: #FFD6BA;
+ background-color: #555B6E;
+ max-width: 1000px;
+}
+
+body.darkmode {
+ --heading-color: #BEE3DB;
+ background-color: #111215 ;
+ color: #babdc7;
+}
+
 nav > ul{
  display: flex;
  list-style-type: none;
  gap: 20px;
+ text-align: center;
+ padding: 10px;
 }
 
 #log_out {
  max-width: 30px;
+}
+
+#settings{
+ max-width: 150px;
+ text-align: center;
+ display:flexbox;
+ padding-left: 200px;
+}
+
+#motus{
+ display:inline;
+ margin-left: auto;
+ margin-right: auto;
+}
+
+#dark-btn {
+ background-color: #BEE3DB;
+ color: #FFD6BA;
+}
+
+#bike {
+ border-radius: 40px;
 }

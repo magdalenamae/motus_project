@@ -32,7 +32,7 @@ def login_action():
     conn.close()
     
     #if email is not in results the return login page
-    if results[0] == None:
+    if results[0] and results[1] == None:
         
         # flash('You information is incorrect, try again')
         return redirect('/')
@@ -80,6 +80,7 @@ def add_ride():
 
 @app.route('/process_rides', methods=['POST'])
 def process_rides():
+    user_id = session.get('user_id')
     ride_description = request.form.get('ride_description')
     ride_start = request.form.get('ride_start')
     ride_end = request.form.get('ride_end')
@@ -87,7 +88,7 @@ def process_rides():
     conn = psycopg2.connect(DB_URL)
     cur = conn.cursor()
     
-    cur.execute('INSERT INTO rides (ride_description, ride_start, ride_end) VALUES (%s, %s, %s)', [ride_description, ride_start, ride_end])
+    cur.execute('INSERT INTO rides (user_id, ride_description, ride_start, ride_end) VALUES (%s, %s, %s, %s)', [user_id, ride_description, ride_start, ride_end])
     conn.commit()
     conn.close()
     print('i work')
@@ -101,16 +102,18 @@ def method_name():
 
 @app.route('/show_rides')
 def show_rides():
+    user_id = session.get('user_id')
+    username = session.get('username')
     conn = psycopg2.connect(DB_URL)
     cur = conn.cursor()
-    cur.execute('SELECT * FROM rides')
+    cur.execute('SELECT * FROM rides WHERE user_id = %s', [user_id])
     rides = cur.fetchall()
     print(rides)
     conn.commit()
     conn.close()
     
  
-    return render_template('show_rides.html' , KEY=KEY, rides=rides)
+    return render_template('show_rides.html' , KEY=KEY, rides=rides, username=username)
 
 @app.route('/delete/<int:ride_id>')
 def delete(ride_id):

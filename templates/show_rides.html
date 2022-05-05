@@ -7,12 +7,14 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/static/static.css">
+  <script src="/static/script.js" defer></script>
  </head>
  <body>
   <img src="/static/images/MoTUS.png"> 
   <a href="/settings">
    <img src="/static/images/settings.png" >
    </a>
+   
   <h1>Your Rides</h1>
   <nav class="navbar">
    <ul>
@@ -35,6 +37,7 @@
   </nav>
   {% for ride_id,owner_id,ride_description,ride_start,ride_end in rides %}
     {{ride_description}} 
+    {{owner_id}}
     <div class="ride" >
 
     <img src="https://dev.virtualearth.net/REST/V1/Imagery/Map/AerialWithLabels/Routes?wp.0={{ride_start}}&wp.1={{ride_end}}&key={{KEY}}">
@@ -47,6 +50,7 @@
     {%endfor%}
 
 
- </body>
- <footer> © Copyright Magdalena Robinson 2022</footer>
+
+    <footer> © Copyright Magdalena Robinson 2022</footer>
+  </body>
 </html>
