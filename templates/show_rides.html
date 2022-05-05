@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/static.css">
+ </head>
+ <body>
+  <img src="/static/images/MoTUS.png"> 
+  <a href="/settings">
+   <img src="/static/images/settings.png" >
+   </a>
+  <h1>Your Rides</h1>
+  <nav class="navbar">
+   <ul>
+    <li>
+     <a href="/user_info">
+     <img src="/static/images/home1.png" >
+     </a>
+    </li>
+    <a href="/add_rides" methods=''>
+    <li>
+     <img src="/static/images/plan_route.png">
+    </li>
+   </a>
+   <a href="/show_rides">
+    <li>
+     <img src="/static/images/rides.png">
+    </li>
+    </a>
+   </ul>
+  </nav>
+  {% for ride_id,owner_id,ride_description,ride_start,ride_end in rides %}
+    {{ride_description}} 
+    <div class="ride" >
+
+    <img src="https://dev.virtualearth.net/REST/V1/Imagery/Map/AerialWithLabels/Routes?wp.0={{ride_start}}&wp.1={{ride_end}}&key={{KEY}}">
+   
+    <button type="button">
+      <a href="/delete/{{ride_id}}">Delete Ride</a>
+    </button>
+
+    </div>
+    {%endfor%}
+
+
+ </body>
+ <footer> © Copyright Magdalena Robinson 2022</footer>
+</html>

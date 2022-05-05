@@ -1,0 +1,19 @@
+html{
+ max-width: fit-content;
+ background-color: #555B6E;
+ text-align: center;
+ font-family: helvetica neue;
+ color:#FFD6BA;
+ display: inline-flex;
+ position: relative;
+}
+
+nav > ul{
+ display: flex;
+ list-style-type: none;
+ gap: 20px;
+}
+
+#log_out {
+ max-width: 30px;
+}
