@@ -1,34 +1,40 @@
-html{
- max-width: fit-content;
- background-color: #555B6E;
- text-align: center;
- font-family: helvetica neue;
- color:#FFD6BA;
- display: inline-flex;
- position: relative;
-}
 
 body {
  --heading-color: #BEE3DB;
  color: #FFD6BA;
  background-color: #555B6E;
- max-width: 1000px;
+ width: 100%;
+ font-family: 'Roboto', sans-serif;
+ text-align: center;
+}
+h1{
+ text-align: center;
+}
+h2{
+
+ text-align: center;
 }
 
 body.darkmode {
  --heading-color: #BEE3DB;
  background-color: #111215 ;
  color: #babdc7;
+ width: 100%;
+ font-family: 'Roboto', sans-serif;
 }
 
-nav > ul{
- display: flex;
+#navbar ul  {
  list-style-type: none;
  gap: 20px;
  text-align: center;
  padding: 10px;
-}
+ font-family: 'Roboto', sans-serif;}
 
+ li {
+  display: inline;
+  text-align: center;
+  padding: 8px;
+ }
 #log_out {
  max-width: 30px;
 }
@@ -36,21 +42,55 @@ nav > ul{
 #settings{
  max-width: 150px;
  text-align: center;
- display:flexbox;
- padding-left: 200px;
+ display: inline-flex;
+ padding: 10px;
+ 
 }
 
-#motus{
- display:inline;
- margin-left: auto;
- margin-right: auto;
+#set {
+ width: 100%;
+ text-align: center;
+
 }
 
 #dark-btn {
  background-color: #BEE3DB;
  color: #FFD6BA;
+ display: inline-flex;
+ padding-top: 10px;
+ 
 }
 
 #bike {
  border-radius: 40px;
+}
+footer {
+ display: inline-flex;
+ text-align: center;
+}
+
+button {
+ background-color: #FFD6BA;
+ border: 1px solid #FFD6BA;
+ color: #111215;
+ border-radius: 10px;
+ display: inline-flex;
+}
+button > a {
+ text-decoration: none;
+ color: #111215;
+}
+
+#map {
+ border-radius: 20px;
+ display: inline-flex;
+}
+
+.ride {
+ padding: 15px;
+}
+
+input[type=text]:focus {
+ background-color: #BEE3DB ;
+ border: #BEE3DB;
 }

@@ -1,50 +1,35 @@
-<!DOCTYPE html>
-<html>
- <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/static/static.css">
-  <script src="/static/script.js" defer></script>
- </head>
- <body>
-  <img src="/static/images/MoTUS.png">
-  <a href="/settings"><br>
-   <img src="/static/images/settings.png" >
-  </a>
-  
-  
+{% extends 'base.html' %}
+
+{% block main %}
+<div id="main" class="settings">
   <h1>Settings</h1>
-  <nav class="navbar">
-   <ul>
-    <li>
-     <a href="/user_info">
-     <img src="/static/images/home1.png" >
-     </a>
-    </li>
-    <a href="/add_rides" methods=''>
-    <li>
-     <img src="/static/images/plan_route.png">
-    </li>
+
+  <div id="second">
+   <a href="/log_out"> 
+    <img id="log_out" src="/static/images/log-out.png"> 
    </a>
-   <a href="/show_rides">
-    <li>
-     <img src="/static/images/rides.png">
-    </li>
+   <p>This button will log you out</p>
+  </div>
+
+  <div id="second">
+    <a href="/user_info">
+  <img src="/static/images/home1.png">
     </a>
-   </ul>
-  </nav>
-  <img src="/static/images/home1.png" id='settings'>
-   <p id='settings'>This button will take you to your
-    home page where you can log out</p>
+    <p id='set'>This button will take you to your
+      home page where you can see your username and add your avatar</p>
+  </div>
+
+  <div id="second">
   <img src="/static/images/plan_route.png" id='settings'>
-   <p id='settings'> This button will let you addd and plan your new rides</p>
+    <p id='set'> This button will let you addd and plan your new rides</p>
+  </div>
+
+  <div id="second">
   <img src="/static/images/rides.png" id='settings'>
-   <p id='settings'> This button will take you to your list of rides where you can delete and update them</p>
-  <button id='darkmode'>Dark Mode</button>
+    <p id='set'> This button will take you to your list of rides where you can delete and update them</p>
+  </div id="second" >
   
- </body>
- <footer> © Copyright Magdalena Robinson 2022</footer>
-</html>
+    <button id='darkmode'>Dark Mode</button>
+</div>
+{% endblock %}
+  

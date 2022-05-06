@@ -1,60 +1,22 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/static/static.css">
-        <script src="script.js" defer></script>
-    </head>
-    <body>
-        <img src="/static/images/MoTUS.png">
-        <div id="header">
-            <a href="/log_out">
-              <img id="log_out" src="/static/images/log-out.png"> 
-             </a>
-            <a href="/settings">
-             <img src="/static/images/settings.png" >
-            </a>
-          </div>
-        <div>
-            <h2>Add a new Ride</h2>
-            <nav class="navbar">
-                <ul>
-                 <li>
-                  <a href="/user_info">
-                  <img src="/static/images/home1.png" >
-                  </a>
-                 </li>
-                 <a href="/add_rides" methods=''>
-                 <li>
-                  <img src="/static/images/plan_route.png">
-                 </li>
-                </a>
-                <a href="/show_rides">
-                 <li>
-                  <img src="/static/images/rides.png">
-                 </li>
-                 </a>
-                </ul>
-               </nav>
-               <img id='bike' src="static/images/bike.gif">
-            <form action="/process_rides" method="POST">
-              <div>
-                  Ride Description: <input name="ride_description" type="text">
-              </div>
-              <div>
-                  Ride start:<input name="ride_start" type="text">
-              </div>
-              <div>
-               Ride end:<input name="ride_end" type="text">
-               </div>
-              <input type="submit" value="Save">
-            </form>
-            </div>
-    </body>
-    <footer> © Copyright Magdalena Robinson 2022</footer>
-</html>
+{% block main %}
+
+<div>
+    <h2>Add a new Ride</h2>
+ 
+    <form action="/process_rides" method="POST">
+      <div>
+          Ride Description: <input name="ride_description" type="text">
+      </div>
+      <div>
+          Ride start:<input name="ride_start" type="text">
+      </div>
+      <div>
+       Ride end:<input name="ride_end" type="text">
+       </div>
+      <input type="submit" value="Save">
+    </form>
+</div>
+
+{% endblock %}

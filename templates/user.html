@@ -1,54 +1,12 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 
-<html>
- <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/static/static.css">
-  <script src="script.js" defer></script>
- </head>
- <body>
-  <img src="/static/images/MoTUS.png">
-  <div id="header">
-    <a href="/log_out">
-      <img id="log_out" src="/static/images/log-out.png"> 
-    </a>
-    <a href="/settings">
-      <img src="/static/images/settings.png">
-    </a>
-  </div>
-    {% if username != None %}
-  <h1> Welcome to Motus {{username}} </h1>
-    {% else %}
-  <h3>You are not logged in <a href='/'>Login here</a></h3>
-    {% endif %}
-    <nav class="navbar">
-      <ul>
-        <li>
-          <a href="/user_info">
-            <img src="/static/images/home1.png" >
-          </a>
-        </li>
-        <li>
-          <a href="/add_rides">
-           <img src="/static/images/plan_route.png">
-          </a>
-        </li>
-        <li>
-          <a href="/show_rides">
-            <img src="/static/images/rides.png">
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <h2>Add profile picture</h2>
-    <form action="/add_pp" method="POST">
-      <input name="image_url" type="file">
-      <input type="submit" value="Save">
-    </form>
-  </body>
- <footer> © Copyright Magdalena Robinson 2022</footer>
-</html>
+{% block main %}
+  <div>
+  {% if username != None %}
+    <h1>Welcome to Motus</h1>
+    <h2>{{ username }}</h2>
+      {% else %}
+    <h3>You are not logged in <a href='/'>Login here</a></h3>
+      {% endif %}
+</div>
+{% endblock %}
