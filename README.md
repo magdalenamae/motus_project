@@ -64,6 +64,16 @@ https://gist.git.generalassemb.ly/katie/2b04e662ffc32713aad1b07747aceed9
 
 # DESIGN 
  I used figma to edit all images and creative features, such as the logo, buttons and colour palette for the application. 
+ 
+ ![Screen Shot 2022-05-07 at 10 35 43 am](https://user-images.githubusercontent.com/99164498/167231743-ec021a16-019d-4893-a01e-24b0cd2a6311.png)
+![Screen Shot 2022-05-07 at 10 35 49 am](https://user-images.githubusercontent.com/99164498/167231746-c0491af3-a120-4acb-9fb5-0f40c5de5b1e.png)
+
+![Screen Shot 2022-05-07 at 10 35 55 am](https://user-images.githubusercontent.com/99164498/167231750-f3ec54ed-58e5-44a6-bcaa-fa73e4be7536.png)
+![Screen Shot 2022-05-07 at 10 36 02 am](https://user-images.githubusercontent.com/99164498/167231753-eebf69bb-92ba-49e8-8cf9-722f82480d0f.png)
+
+
+https://user-images.githubusercontent.com/99164498/167231810-33a7af31-1f16-4df5-b42e-9268587b1edc.mov
+
 
 - https://www.figma.com/file/jI6Knt0x8QCmzcPMcGCtZ9/UXDesign_StudentTemplate?node-id=1%3A6219
 # Unresolved issues 
