@@ -4,6 +4,7 @@ from flask import Flask, request,  redirect, render_template, session, flash
 import os 
 import psycopg2
 import bcrypt
+
 KEY = 'ApcKaohzYrX3IDg_HAIT1e4j5xfiAO4c-4xLukmzExsOMFRxkNGkdYahxjC6owS6'
 DB_URL = os.environ.get('DATABASE_URL','dbname=motus')
 SECRET_KEY = os.environ.get('SECRET_KEY', 'pretend secret  KEY')
@@ -13,8 +14,16 @@ app.config['SECRET_KEY'] = SECRET_KEY
 
 @app.route('/')
 def on_boarding():
-        return render_template('login.html')
+        return render_template('on_boarding.html')
 
+@app.route('/login_page')
+def login_page():
+    return render_template('login_page.html')
+
+@app.route('/signUp_page' )
+def signUp():
+    return render_template('signUp_page.html')
+# ------- login ------- #
 @app.route('/login', methods=['POST'])
 def login_action():
     email = request.form.get('email')
@@ -36,7 +45,7 @@ def login_action():
         
         # flash('You information is incorrect, try again')
         return redirect('/')
-
+# ------- password checking ------- #
     if bcrypt.checkpw(password.encode(), results[1].encode()) == True and email == results[0]:
         session['email'] = results[0]
         session['password'] = results[1]
@@ -49,13 +58,15 @@ def login_action():
         
         # ('You information is incorrect, try again')
         return redirect('/')
+# ------- logout  ------- #
 
 @app.route('/log_out')
 def log_out():
   session.clear()
   return redirect('/')
     
-    
+# ------- Sign up ------- #
+
 @app.route('/sign_up', methods=['POST'])
 def sign_up():
     
@@ -74,9 +85,13 @@ def sign_up():
    conn.close()
    return redirect('/user_info')
 
+# ------- Add rides ------- #
+
 @app.route('/add_rides', methods=['GET'])
 def add_ride():
     return render_template('add_ride.html')
+
+# ------- processing adding rides ------- #
 
 @app.route('/process_rides', methods=['POST'])
 def process_rides():
@@ -94,12 +109,14 @@ def process_rides():
     print('i work')
     return redirect('/show_rides')
     
-    
+# ------- setting session/cookies ------- #   
+
 @app.route('/user_info')
 def method_name():
     username = session.get('username')
     return render_template('user.html', username=username)
 
+# ------- displaying rides from tables ------- #
 @app.route('/show_rides')
 def show_rides():
     user_id = session.get('user_id')
@@ -115,6 +132,8 @@ def show_rides():
  
     return render_template('show_rides.html' , KEY=KEY, rides=rides, username=username)
 
+# ------- deleting rides ------- #
+
 @app.route('/delete/<int:ride_id>')
 def delete(ride_id):
     conn = psycopg2.connect(DB_URL)
@@ -122,6 +141,8 @@ def delete(ride_id):
     cur.execute('DELETE FROM rides WHERE ride_id = %s', [ride_id])
     conn.commit()
     return redirect('/show_rides')
+
+# ------- settings page ------- #
 
 @app.route('/settings')
 def settings():

@@ -24,3 +24,12 @@ darkModeButton.addEventListener('click', function() {
 
 })
 
+
+
+function randomPicture() {
+  const randomNumber = Math.floor(Math.random() * 10)
+  const randomImage = `https://picsum.photos/id/${randomNumber}/200/300`
+  return randomImage
+}
+
+console.log(randomPicture())

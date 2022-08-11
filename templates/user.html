@@ -1,12 +1,63 @@
-{% extends 'base.html' %}
 
-{% block main %}
-  <div>
-  {% if username != None %}
-    <h1>Welcome to Motus</h1>
-    <h2>{{ username }}</h2>
-      {% else %}
-    <h3>You are not logged in <a href='/'>Login here</a></h3>
-      {% endif %}
-</div>
-{% endblock %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="/static/static.css">
+ <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+ <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+ <script src="/static/script.js" defer></script>
+ <title>MOTUS</title>
+ 
+</head>
+<body>
+  <main>
+    <div id='header'>
+       
+      {% if username != None %}
+      <h2 id='username-text'>Hey {{username}} 👋</h2>
+        {% else %}
+      <h3>You are not logged in <a href='/'>Login here</a></h3>
+        {% endif %}
+        <img src='/static/images/bike1.png' id='bike-img'>   
+
+    </div>
+    <div id='text'>
+      <img src='/static/images/Text.png' id='text'>
+    </div>
+
+    {% block main %}
+    {% endblock %}
+  </main>
+      <nav id='site-nav'>
+        <ul id='nav-list'>
+            <li>
+              <a href="/user_info">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="/add_rides" methods=''>
+                Add Ride
+              </a>
+            </li>
+            <li>
+              <a href="/show_rides">
+               Rides
+              </a>
+            </li>
+            <li>
+                <a href="/log_out"> 
+                Log Out
+                </a>
+            </li>
+        </ul>
+      </nav>
+ 
+</body>
+
+</html>

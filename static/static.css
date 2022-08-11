@@ -1,96 +1,312 @@
-
-body {
- --heading-color: #BEE3DB;
- color: #FFD6BA;
- background-color: #555B6E;
- width: 100%;
- font-family: 'Roboto', sans-serif;
- text-align: center;
-}
-h1{
- text-align: center;
-}
-h2{
-
- text-align: center;
-}
-
-body.darkmode {
- --heading-color: #BEE3DB;
- background-color: #111215 ;
- color: #babdc7;
- width: 100%;
- font-family: 'Roboto', sans-serif;
-}
-
-#navbar ul  {
- list-style-type: none;
- gap: 20px;
- text-align: center;
- padding: 10px;
- font-family: 'Roboto', sans-serif;}
-
- li {
-  display: inline;
-  text-align: center;
-  padding: 8px;
- }
-#log_out {
- max-width: 30px;
-}
-
-#settings{
- max-width: 150px;
- text-align: center;
- display: inline-flex;
- padding: 10px;
- 
-}
-
-#set {
- width: 100%;
- text-align: center;
+body{
+  background-color: #191D23 !important;
+  margin: 0 auto !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
 }
 
-#dark-btn {
- background-color: #BEE3DB;
- color: #FFD6BA;
- display: inline-flex;
- padding-top: 10px;
- 
+
+.row {
+  background-color: #191D23;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 100vh;
+  height: 100vh;
 }
 
-#bike {
- border-radius: 40px;
-}
-footer {
- display: inline-flex;
- text-align: center;
+#motus_logo {
+  display: inline-flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  width: 20vh;
+  padding: 10px;
 }
 
-button {
- background-color: #FFD6BA;
- border: 1px solid #FFD6BA;
- color: #111215;
- border-radius: 10px;
- display: inline-flex;
-}
-button > a {
+
+
+#nav-list {
+  padding : 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
  text-decoration: none;
- color: #111215;
+
 }
 
-#map {
- border-radius: 20px;
- display: inline-flex;
+li {
+  list-style-type: none;
+  padding: 10px;
+  text-decoration: none;
 }
 
-.ride {
- padding: 15px;
+a {
+  text-decoration: none !important;
+  color: white !important;
 }
 
-input[type=text]:focus {
- background-color: #BEE3DB ;
- border: #BEE3DB;
+.rides{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.ride{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  color: white;
+  font-family: 'Poppins';
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#ride-del-btn{
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  width: 15vw !important;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#ride-header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 auto;
+  color: #6B8BE6;
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+}
+
+#ride-text{
+  color: white;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+#add-ride{
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+#add-ride-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#site-nav{
+  justify-content: center;
+  background-color: #191D23;
+  width: 100vw;
+  height: 6vh;
+  margin: 10px;
+  position: fixed;
+  bottom: 0;
+}
+
+#site-nav a:hover {
+  background-color: #6B8BE6 !important;
+  color: black !important;
+}
+
+#onboarding{
+  display: grid;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-items: center;
+  width: 100vh;
+  height: 100vh;
+}
+
+#motus_logo_on-boarding{
+  display: inline-flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  width: 50vh;
+  padding: 10px;
+}
+#motus_logo-add-ride{
+  display: inline-flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  width: 30vh;
+  padding: 10px;
+}
+
+#onboarding_page{
+  display: grid;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-items: center;
+  width: 100vh;
+  height: 100vh;
+}
+
+#message{
+  padding: 10px;
+}
+
+button{
+  background-color:#6B8BE6 !important;
+  border: #6B8BE6 !important;
+  margin: 10px !important;
+  width: 10vw !important;
+}
+
+#bike-img{
+  width: 40vh;
+  height: 40vh;
+}
+
+#username-text{
+  color: white;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 5vh;
+}
+
+#text{
+  width: 30vh;
+  height: 20vh;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+#actions{
+  display: grid;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  margin: 0 auto;
+}
+/* login styling */
+#login{
+  color: white;
+  padding: 10px;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+#login-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#login-txt{
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+/* signup styling */
+#sign_up{
+  color: white;
+  padding: 10px;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+#signup-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 auto;
+}
+/* rides styling  */
+
+#rides-header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 auto;
+  color: #6B8BE6;
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+  width: 100vw;
+}
+
+.ride-container{
+  display: flex;
+  /* grid-template-columns: auto; */
+  /* grid-template-rows: auto; */
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#map{
+  width: 15vw;
+  height: 15vh;
 }
