@@ -1,5 +1,6 @@
 from crypt import methods
 from distutils.command.config import LANG_EXT
+from email.policy import strict
 import re
 from flask import Flask, request,  redirect, render_template, session, flash 
 import os 
@@ -48,10 +49,10 @@ def login_action():
         return redirect('/')
 # ------- password checking ------- #
     if bcrypt.checkpw(password.encode(), results[1].encode()) == True and email == results[0]:
-        session['email'] = results[0]
-        session['password'] = results[1]
-        session['user_id'] = results[2]
-        session['username'] = results[3] 
+        session['email'] = results[0];SameSite=None; Secure=True;
+        session['password'] = results[1];SameSite=None; Secure
+        session['user_id'] = results[2];SameSite=None; Secure
+        session['username'] = results[3];SameSite=None; Secure
         
         # flash('You were successfully logged in')
         return redirect('/user_info')
@@ -115,7 +116,7 @@ def process_rides():
 
 @app.route('/user_info')
 def method_name():
-    username = session.get('username');SameSite=None; 
+    username = session.get('username');SameSite=strict; Secure=True;
     return render_template('user.html', username=username)
 
 # ------- displaying rides from tables ------- #
