@@ -1,4 +1,5 @@
 from crypt import methods
+from distutils.command.config import LANG_EXT
 import re
 from flask import Flask, request,  redirect, render_template, session, flash 
 import os 
@@ -50,7 +51,8 @@ def login_action():
         session['email'] = results[0]
         session['password'] = results[1]
         session['user_id'] = results[2]
-        session['username'] = results[3]
+        session['username'] = results[3] 
+        
         # flash('You were successfully logged in')
         return redirect('/user_info')
     
@@ -113,7 +115,7 @@ def process_rides():
 
 @app.route('/user_info')
 def method_name():
-    username = session.get('username')
+    username = session.get('username');SameSite=None; 
     return render_template('user.html', username=username)
 
 # ------- displaying rides from tables ------- #
