@@ -13,6 +13,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'pretend secret  KEY')
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = SECRET_KEY
+app.config['SESSION_COOKIE_SAMESITE'] = "None"
+app.config['SESSION_COOKIE_SECURE'] = True
+
+
+
 
 @app.route('/')
 def on_boarding():
@@ -49,10 +54,10 @@ def login_action():
         return redirect('/')
 # ------- password checking ------- #
     if bcrypt.checkpw(password.encode(), results[1].encode()) == True and email == results[0]:
-        session['email'] = results[0];SameSite=None; Secure=True;
-        session['password'] = results[1];SameSite=None; Secure
-        session['user_id'] = results[2];SameSite=None; Secure
-        session['username'] = results[3];SameSite=None; Secure
+        session['email'] = results[0]
+        session['password'] = results[1]
+        session['user_id'] = results[2]
+        session['username'] = results[3]
         
         # flash('You were successfully logged in')
         return redirect('/user_info')
@@ -116,7 +121,7 @@ def process_rides():
 
 @app.route('/user_info')
 def method_name():
-    username = session.get('username');SameSite=strict; Secure=True;
+    username = session.get('username')
     return render_template('user.html', username=username)
 
 # ------- displaying rides from tables ------- #
