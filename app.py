@@ -1,5 +1,3 @@
-from crypt import methods
-from distutils.command.config import LANG_EXT
 from email.policy import strict
 import re
 from flask import Flask, request,  redirect, render_template, session, flash 
@@ -29,7 +27,7 @@ def login_page():
 
 @app.route('/signUp_page' )
 def signUp():
-    return render_template('signUp_page.html')
+    return render_template('sign_up_page.html')
 # ------- login ------- #
 @app.route('/login', methods=['POST'])
 def login_action():

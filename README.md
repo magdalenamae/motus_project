@@ -5,7 +5,7 @@
 ### motus is a ride share application
 The application provides a onboarding page that allows the  user to login to the database. The database is made up of the follwing tables and allows the user to access their own rides, personalised page.The user can add their own rides, delete and edit their experience with the darkmode button in the setting route. 
 
- ``` CREATE TABLE motus_users (
+``` CREATE TABLE motus_users (
 	user_id serial PRIMARY KEY,
 	username TEXT UNIQUE,
 	hash_pw TEXT,
