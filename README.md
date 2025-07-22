@@ -1,96 +1,105 @@
-# Motus_project
-## A ride share application 
-- Add `.DS_store` to the `.gitignore` file
-- add a short description to the README file
-### motus is a ride share application
-The application provides a onboarding page that allows the  user to login to the database. The database is made up of the follwing tables and allows the user to access their own rides, personalised page.The user can add their own rides, delete and edit their experience with the darkmode button in the setting route. 
+# Motus - A ride share application #
 
-``` CREATE TABLE motus_users (
-	user_id serial PRIMARY KEY,
-	username TEXT UNIQUE,
-	hash_pw TEXT,
-	email TEXT UNIQUE,
-	created_on TIMESTAMP DEFAULT NOW(),
- last_login TIMESTAMP 
+## Structure ##
+
+The application provides an onboarding page that allows the user to login to the database. The database is made up of the following tables and allows the user to access their own rides, personalised page. The user can add their own rides, delete and edit their experience with the dark mode button in the setting route.
+
+```sql
+CREATE TABLE motus_users (
+    user_id serial PRIMARY KEY,
+    username TEXT UNIQUE,
+    hash_pw TEXT,
+    email TEXT UNIQUE,
+    created_on TIMESTAMP DEFAULT NOW(),
+    last_login TIMESTAMP
 );
 
 CREATE TABLE rides (
- ride_id SERIAL PRIMARY KEY,
-	user_id INTEGER,
- ride_description TEXT,
- ride_start TEXT,
-	ride_end TEXT,
-	FOREIGN KEY(user_id) 
-		REFERENCES motus_users(user_id)
+    ride_id SERIAL PRIMARY KEY,
+    user_id INTEGER,
+    ride_description TEXT,
+    ride_start TEXT,
+    ride_end TEXT,
+    FOREIGN KEY(user_id) REFERENCES motus_users(user_id)
 );
 ```
-The users table contains all the information required to add a user to the database.The rides table contains all the information required to add a ride to the database. the two tables are linked together by using a foreign key refrencing the user_id in the user table. 
 
-# Setting up the the vertual enviroment
+The users table contains all the information required to add a user to the database. The rides table contains all the information required to add a ride to the database. The two tables are linked together by using a foreign key referencing the user_id in the user table.
 
-- python -m venv venv
---creates the venv(virtual enviroment) directory
-- source venv/bin/activate
---This should add (venv)to your terminal prompt.
+## Setting up the development environment ##
 
-after activating the virtual enviroment, need to create a database. 
+Create and activate the virtual environment:
 
-To create the database you need to follow the steps below:
-- pip install psql
-- pip install bcrypt
-- pip install flask
-- brew install heroku/brew/heroku
-- heroku addons:create heroku-postgresql:hobby-dev
+```bash
+python -m venv venv
+source venv/bin/activate
+```
 
-to see the whole heroku cheat sheet, click the url bellow:
+Now you can install the required packages:
 
-https://gist.git.generalassemb.ly/katie/2b04e662ffc32713aad1b07747aceed9
-#### Generating a random secret key with python
->>> import secrets
->>> secrets.token_hex(16)
+```bash
+brew install postgresql # If running on MacOS X
+pip install psycopg2 bcrypt flask
+```
 
+After activating the virtual environment, need to create a database. To create
+the database on heroku, you need to follow the steps below:
 
-# Technologies Used 
+```bash
+brew install heroku/brew/heroku
+heroku addons:create heroku-postgresql:hobby-dev
+```
 
-- PSQL 
-- API
-- HEROKU 
-- Flask 
+## Generating a random secret key ##
+
+To generate a value for `SECRET_KEY` in production, run the following in a
+python shell:
+
+```python
+import secrets
+secrets.token_hex(16)
+```
+
+## Technologies Used ##
+
+- PostgreSQL
+- Heroku
+- Flask
 - Python
-- HTML 
+- HTML
 - CSS
 - Javascript
-- FIGMA 
+- Figma
 
-# DESIGN 
- I used figma to edit all images and creative features, such as the logo, buttons and colour palette for the application. 
- 
- ![Screen Shot 2022-05-07 at 10 35 43 am](https://user-images.githubusercontent.com/99164498/167231743-ec021a16-019d-4893-a01e-24b0cd2a6311.png)
+## Design ##
+I used figma to edit all images and creative features, such as the logo, buttons and colour palette for the application.
+
+![Screen Shot 2022-05-07 at 10 35 43 am](https://user-images.githubusercontent.com/99164498/167231743-ec021a16-019d-4893-a01e-24b0cd2a6311.png)
+
 ![Screen Shot 2022-05-07 at 10 35 49 am](https://user-images.githubusercontent.com/99164498/167231746-c0491af3-a120-4acb-9fb5-0f40c5de5b1e.png)
 
 ![Screen Shot 2022-05-07 at 10 35 55 am](https://user-images.githubusercontent.com/99164498/167231750-f3ec54ed-58e5-44a6-bcaa-fa73e4be7536.png)
+
 ![Screen Shot 2022-05-07 at 10 36 02 am](https://user-images.githubusercontent.com/99164498/167231753-eebf69bb-92ba-49e8-8cf9-722f82480d0f.png)
 
 ![Screen Shot 2022-05-07 at 11 10 00 am](https://user-images.githubusercontent.com/99164498/167232013-d9385426-bbf2-4146-8644-2622987c6d82.png)
 
-
-
 https://user-images.githubusercontent.com/99164498/167231810-33a7af31-1f16-4df5-b42e-9268587b1edc.mov
 
-
 - https://www.figma.com/file/jI6Knt0x8QCmzcPMcGCtZ9/UXDesign_StudentTemplate?node-id=1%3A6219
-# Unresolved issues 
-i wanted the to add the following features to the application.
 
-- a more personalised user profile. allowing the user to add a avatar and update and chage their username. 
+## Unresolved issues ##
 
-- the option to edit rides. 
+I want to add the following features to the application:
+- A more personalised user profile. Allowing the user to add an avatar and
+  update and change their username.
+- The option to edit rides.
+- A loading page.
+- A GSP tracking system that would allow the user to track their ride in real
+  time rather than add the locations later.
+- The incorporation of a weather API to allow the user to revisit their ride
+  and see the weather for their selected location and date.
 
-- a loading page 
+## URL for the application ##
 
-- a gsp trackering sytem that would allow the user to to track their ride in real tie rather than add the track location later. 
-
-- the incorperation of a weather api to allow the user to revisit their ride and see the weather for their selected location and date. 
-
-# URL for the application 
 - https://mysterious-plains-73351.herokuapp.com/show_rides
