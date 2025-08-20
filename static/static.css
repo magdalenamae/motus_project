@@ -8,18 +8,12 @@ body{
 
 }
 
-
-.row {
-  background-color: #191D23;
+.flex {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   align-content: center;
-  flex-direction: column;
-  margin: 0 auto;
-  width: 100vh;
-  height: 100vh;
 }
 
 #motus_logo {
@@ -138,19 +132,26 @@ a {
   margin: 0 auto;
 }
 
-#site-nav{
-  justify-content: center;
-  background-color: #191D23;
-  width: 100vw;
-  height: 6vh;
-  margin: 10px;
-  position: fixed;
-  bottom: 0;
+.site-nav {
+  background-color: #111; /* dark footer */
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.4);
 }
 
-#site-nav a:hover {
-  background-color: #6B8BE6 !important;
-  color: black !important;
+#site-nav .nav-link {
+  color: #eee;
+}
+
+#site-nav .nav-link:hover,
+#site-nav .nav-link:focus {
+  color: #0d6efd; /* Bootstrap primary */
+  background-color: rgba(13, 110, 253, 0.1);
+  border-radius: 0.5rem;
+}
+
+#site-nav .nav-link.active {
+  color: #0d6efd;
+  font-weight: 600;
+  border-bottom: 2px solid #0d6efd;
 }
 
 #onboarding{
@@ -259,7 +260,7 @@ button{
   color: white;
   font-family: 'Poppins', sans-serif;
 }
-/* signup styling */
+
 #sign_up{
   color: white;
   padding: 10px;
@@ -275,13 +276,13 @@ button{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: center;
+  align-content: start;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   margin: 0 auto;
 }
-/* rides styling  */
 
+/* rides styling  */
 #rides-header{
   display: flex;
   flex-direction: column;

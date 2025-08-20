@@ -14,54 +14,32 @@
  
 </head>
 <body>
-
   <main>
-
     <div id='header'>
-      
       <img id="motus_logo" src="/static/images/MoTUS.png">
-        
     </div>
-
-
     {% block main %}
     {% endblock %}
-
     <div id='site-nav'>
-
-      <nav id='site-nav'>
-        <ul>
-            <li>
-              <a href="/user_info">
-                <img src="/static/images/home1.png">
-              </a>
+      <nav id="site-nav" class="border-top fixed-bottom">
+        <div class="container">
+          <ul id="nav-list" class="nav justify-content-between py-2">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('user_info') }}">Home</a>
             </li>
-            <li>
-              <a href="/add_rides" methods=''>
-                <img src="/static/images/plan_route.png">
-              </a>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('process_rides') }}">Add Ride</a>
             </li>
-            <li>
-              <a href="/show_rides">
-                <img src="/static/images/rides.png">
-              </a>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{ url_for('show_rides') }}">Rides</a>
             </li>
-            <li>
-                <a href="/log_out"> 
-                <img id="log_out" src="/static/images/log-out.png"> 
-                </a>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('log_out') }}">Log Out</a>
             </li>
-            <li>
-              <button id='darkmode'>Dark Mode</button>
-            </li>
-        </ul>
-
+          </ul>
+        </div>
       </nav>
-
     </div>
-
   </main>
-  
 </body>
-
 </html>

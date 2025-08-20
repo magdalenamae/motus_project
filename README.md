@@ -11,7 +11,7 @@ CREATE TABLE motus_users (
     hash_pw TEXT,
     email TEXT UNIQUE,
     created_on TIMESTAMP DEFAULT NOW(),
-    last_login TIMESTAMP
+    last_login TIMESTAMP DEFAULT NOW()
 );
 
 CREATE TABLE rides (
@@ -38,7 +38,7 @@ source venv/bin/activate
 Now you can install the required packages:
 
 ```bash
-brew install postgresql # If running on MacOS X
+brew install postgresql
 pip install psycopg2 bcrypt flask
 ```
 
@@ -84,9 +84,6 @@ I used figma to edit all images and creative features, such as the logo, buttons
 
 ![Screen Shot 2022-05-07 at 11 10 00 am](https://user-images.githubusercontent.com/99164498/167232013-d9385426-bbf2-4146-8644-2622987c6d82.png)
 
-https://user-images.githubusercontent.com/99164498/167231810-33a7af31-1f16-4df5-b42e-9268587b1edc.mov
-
-- https://www.figma.com/file/jI6Knt0x8QCmzcPMcGCtZ9/UXDesign_StudentTemplate?node-id=1%3A6219
 
 ## Unresolved issues ##
 
@@ -95,11 +92,11 @@ I want to add the following features to the application:
   update and change their username.
 - The option to edit rides.
 - A loading page.
-- A GSP tracking system that would allow the user to track their ride in real
+- A GPS tracking system that would allow the user to track their ride in real
   time rather than add the locations later.
 - The incorporation of a weather API to allow the user to revisit their ride
   and see the weather for their selected location and date.
 
 ## URL for the application ##
 
-- https://mysterious-plains-73351.herokuapp.com/show_rides
+- https://motus-0dc97e914926.herokuapp.com

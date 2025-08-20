@@ -1,5 +1,4 @@
 const initalMode = localStorage.getItem('mode')
-
 console.log(initalMode)
 
 if (initalMode == 'dark') {

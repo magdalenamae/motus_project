@@ -12,52 +12,38 @@
  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
  <script src="/static/script.js" defer></script>
  <title>MOTUS</title>
- 
 </head>
 <body>
   <main>
     <div id='header'>
-       
       {% if username != None %}
       <h2 id='username-text'>Hey {{username}} 👋</h2>
-        {% else %}
+      {% else %}
       <h3>You are not logged in <a href='/'>Login here</a></h3>
-        {% endif %}
-        <img src='/static/images/bike1.png' id='bike-img'>   
-
+      {% endif %}
+      <img src='/static/images/bike1.png' id='bike-img'>   
     </div>
-    <div id='text'>
-      <img src='/static/images/Text.png' id='text'>
+    <div id='new-ride-wrapper'>
+      <img src='/static/images/Text.png' id='new-ride-image'>
     </div>
-
-    {% block main %}
-    {% endblock %}
   </main>
-      <nav id='site-nav'>
-        <ul id='nav-list'>
-            <li>
-              <a href="/user_info">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="/add_rides" methods=''>
-                Add Ride
-              </a>
-            </li>
-            <li>
-              <a href="/show_rides">
-               Rides
-              </a>
-            </li>
-            <li>
-                <a href="/log_out"> 
-                Log Out
-                </a>
-            </li>
-        </ul>
-      </nav>
- 
+  <nav id="site-nav" class="border-top fixed-bottom">
+    <div class="container">
+      <ul id="nav-list" class="nav justify-content-between py-2">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('user_info') }}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('process_rides') }}">Add Ride</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ url_for('show_rides') }}">Rides</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('log_out') }}">Log Out</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </body>
-
 </html>

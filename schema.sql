@@ -1,14 +1,13 @@
-
 DROP TABLE IF EXISTS rides;
 DROP TABLE IF EXISTS motus_users;
 
 CREATE TABLE motus_users (
-	user_id serial PRIMARY KEY,
-	username TEXT UNIQUE,
-	hash_pw TEXT,
-	email TEXT UNIQUE,
-	created_on TIMESTAMP DEFAULT NOW(),
- last_login TIMESTAMP 
+    user_id serial PRIMARY KEY,
+    username TEXT UNIQUE,
+    hash_pw TEXT,
+    email TEXT UNIQUE,
+    created_on TIMESTAMP DEFAULT NOW(),
+    last_login TIMESTAMP DEFAULT NOW()
 );
 
 CREATE TABLE rides (
